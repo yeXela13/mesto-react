@@ -4,7 +4,7 @@ function Card({card, onCardClick}) {
     };
 
     return (
-        <div>
+        
             <li className="element__item">
                 <img className="element__image" src={card.link} alt={card.name} onClick={handleCardClick} />
                 <button className="element__delete-button" type="button"></button>
@@ -12,11 +12,11 @@ function Card({card, onCardClick}) {
                     <h2 className="element__text">{card.name}</h2>
                     <div className="element__like-container">
                         <button className="element__like" type="button"></button>
-                        <p className="element__like-sum">0</p>
+                        <p className="element__like-sum">{card.likes.length}</p>
                     </div>
                 </div>
             </li>
-        </div>
+     
     );
 }
 

@@ -20,33 +20,31 @@ function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick }) {
     }, []);
 
     return (
-        <div >
-            <main className="main">
-                <section className="profile">
-                    <button className="profile__edit-avatar" type="button" onClick={onEditAvatar}>
-                        <img className="profile__avatar" src={userAvatar} alt="Ваш автар" />
-                    </button>
-                    <div className="profile__info">
-                        <div className="profile__container">
-                            <h1 className="profile__name">{userName}</h1>
-                            <button className="profile__edit-button" type="button" onClick={onEditProfile}></button>
-                        </div>
-                        <p className="profile__post">{userDescription}</p>
+        <main className="main">
+            <section className="profile">
+                <button className="profile__edit-avatar" type="button" onClick={onEditAvatar}>
+                    <img className="profile__avatar" src={userAvatar} alt="Ваш автар" />
+                </button>
+                <div className="profile__info">
+                    <div className="profile__container">
+                        <h1 className="profile__name">{userName}</h1>
+                        <button className="profile__edit-button" type="button" onClick={onEditProfile}></button>
                     </div>
-                    <button className="profile__add-button" type="button" onClick={onAddPlace}></button>
-                </section>
-                <section className="elements">
-                    <ul className="element">
-                        {cards.map((card) => (
-                            <Card card={card}
-                                key={card._id}
-                                onCardClick={onCardClick}
-                            />
-                        ))}
-                    </ul>
-                </section>
-            </main>
-        </div>
+                    <p className="profile__post">{userDescription}</p>
+                </div>
+                <button className="profile__add-button" type="button" onClick={onAddPlace}></button>
+            </section>
+            <section className="elements">
+                <ul className="element">
+                    {cards.map((card) => (
+                        <Card card={card}
+                            key={card._id}
+                            onCardClick={onCardClick}
+                        />
+                    ))}
+                </ul>
+            </section>
+        </main>
     );
 }
 

@@ -9,27 +9,27 @@ import { useState } from 'react';
 
 
 function App() {
-    const [isEditAvatarPopupOpen, setisEditAvatarPopupOpen] = useState(false);
+    const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
     const [isEditProfilePopupOpen, setEditProfilePopupOpen] = useState(false);
-    const [isAddPlacePopupOpen, setisAddPlacePopupOpen] = useState(false);
-    const [selectedCard, setSelectedCard] = useState(false);
+    const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
+    const [selectedCard, setSelectedCard] = useState(null);
     function handleEditAvatarClick() {
-        setisEditAvatarPopupOpen(true);
+        setIsEditAvatarPopupOpen(true);
     }
     function handleEditProfileClick() {
         setEditProfilePopupOpen(true);
     }
     function handleAddPlaceClick() {
-        setisAddPlacePopupOpen(true);
+        setIsAddPlacePopupOpen(true);
     }
     function handleCardClick(card) {
         setSelectedCard(card);
     }
     function closeAllPopups() {
-        setisEditAvatarPopupOpen(false);
+        setIsEditAvatarPopupOpen(false);
         setEditProfilePopupOpen(false);
-        setisAddPlacePopupOpen(false);
-        setSelectedCard(false);
+        setIsAddPlacePopupOpen(false);
+        setSelectedCard(null);
     }
 
     return (
@@ -127,23 +127,9 @@ function App() {
             </PopupWithForm>
             {/* попап с картинкой */}
             <ImagePopup
-            card={selectedCard}
-            onClose={closeAllPopups}
+                card={selectedCard}
+                onClose={closeAllPopups}
             />
-
-            {/* <template>
-                <li className="element__item">
-                    <img className="element__image" src="#" alt="#" />
-                    <button className="element__delete-button" type="button"></button>
-                    <div className="element__caption">
-                        <h2 className="element__text"></h2>
-                        <div className="element__like-container">
-                            <button className="element__like" type="button"></button>
-                            <p className="element__like-sum">0</p>
-                        </div>
-                    </div>
-                </li>
-            </template> */}
         </div >
     );
 }

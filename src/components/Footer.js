@@ -1,10 +1,8 @@
 function Footer() {
   return (
-    <div>
     <footer className="footer">
-        <p className="footer__info">&copy;2022 Mesto World</p>
+      <p className="footer__info">{new Date().getFullYear()} Mesto World</p>
     </footer>
-    </div>
   );
 }
 
