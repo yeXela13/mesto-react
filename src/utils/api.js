@@ -21,7 +21,7 @@ class Api {
         })
     }
 
-    updateUserInfo(data) {
+    setUserInfo(data) {
         return this._request(`${this._baseUrl}/users/me`, {
             method: 'PATCH',
             headers: this._headers,
@@ -49,7 +49,7 @@ class Api {
         })
     }
 
-    editAvatar(data) {
+    setUserAvatar(data) {
         return this._request(`${this._baseUrl}/users/me/avatar`, {
             method: 'PATCH',
             headers: this._headers,
@@ -66,15 +66,27 @@ class Api {
         })
     }
 
-    setLike(cardId) {
-        return this._request(`${this._baseUrl}/cards/likes/${cardId}`, {
-            method: 'PUT',
-            headers: this._headers
-        })
-    }
+    // setLike(cardId) {
+    //     return this._request(`${this._baseUrl}/cards/likes/${cardId}`, {
+    //         method: 'PUT',
+    //         headers: this._headers
+    //     })
+    // }
 
-    deleteLike(data) {
-        return this._request(`${this._baseUrl}/cards/likes/${data}`, {
+    // deleteLike(data) {
+    //     return this._request(`${this._baseUrl}/cards/likes/${data}`, {
+    //         method: 'DELETE',
+    //         headers: this._headers
+    //     })
+    // }
+    changeLikeCardStatus(cardId, isLiked) {
+        if (isLiked) {
+            return this._request(`${this._baseUrl}/cards/likes/${cardId}`, {
+                method: 'PUT',
+                headers: this._headers
+            })
+        }
+        return this._request(`${this._baseUrl}/cards/likes/$`, {
             method: 'DELETE',
             headers: this._headers
         })
@@ -82,7 +94,7 @@ class Api {
 }
 
 
- const api = new Api({
+const api = new Api({
     baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-59/',
     headers: {
         authorization: 'fb15d3cd-51f7-4c56-adbf-e4fa5201b028',
@@ -91,3 +103,4 @@ class Api {
 });
 
 export default api;
+
