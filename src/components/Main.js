@@ -28,7 +28,6 @@ function Main({ cards, onEditProfile, onAddPlace, onEditAvatar, onCardClick, onC
                             onCardClick={onCardClick}
                             onCardLike={onCardLike}
                             onCardDelete={onCardDelete}
-
                         />
                     ))}
                 </ul>

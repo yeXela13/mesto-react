@@ -116,14 +116,15 @@ function App() {
                 />
                 <Footer />
                 {/* попап удалить карточку */}
-                <EditProfilePopup
-                    isOpen={isEditProfilePopupOpen}
-                    onClose={closeAllPopups}
-                    onUpdateUser={handleUpdateUser} />
                 <DeletePopup
                     isOpen={isDeletePopupOpen}
                     onClose={closeAllPopups}
                 />
+                {/* попап редактирования */}
+                <EditProfilePopup
+                    isOpen={isEditProfilePopupOpen}
+                    onClose={closeAllPopups}
+                    onUpdateUser={handleUpdateUser} />
                 {/* попап добавить карточку */}
                 <AddPlacePopup
                     isOpen={isAddPlacePopupOpen}
